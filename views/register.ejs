@@ -1,0 +1,92 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="max-w-4xl mx-auto font-[sans-serif] p-2">
+      <div class="text-center mb-8">
+        <div class="flex justify-around">
+          <h4 class="text-gray-800 text-base font-semibold mt-6">Sign up into
+            your account</h4>
+          <h4 class="text-gray-800 text-base font-semibold mt-6">Already have an
+            account?
+            <a
+              href="./login"
+              class="text-blue-600 font-semibold hover:underline ml-1"
+            >Login here</a></h4>
+        </div>
+        <h4 class="text-green-800 text-base font-semibold mt-6 hover:underline">User Not Register! New User Register Hear!</h4>
+      </div>
+
+      <form action="/api/user/register" method="post">
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label class="text-gray-800 text-sm mb-2 block">First Name</label>
+            <input
+              name="name" id="name"
+              type="text"
+              class="bg-gray-100 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
+              placeholder="Enter name"
+            />
+          </div>
+          <div>
+            <label class="text-gray-800 text-sm mb-2 block">Last Name</label>
+            <input
+              name="lname" id="lname"
+              type="text"
+              class="bg-gray-100 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
+              placeholder="Enter last name"
+            />
+          </div>
+          <div>
+            <label class="text-gray-800 text-sm mb-2 block">Email Id</label>
+            <input
+              name="email" id="email"
+              type="text"
+              class="bg-gray-100 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
+              placeholder="Enter email"
+            />
+          </div>
+          <div>
+            <label class="text-gray-800 text-sm mb-2 block">Mobile No.</label>
+            <input
+              name="number" id="number"
+              type="number"
+              class="bg-gray-100 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
+              placeholder="Enter mobile number"
+            />
+          </div>
+          <div>
+            <label class="text-gray-800 text-sm mb-2 block">Password</label>
+            <input
+              name="password" id="password"
+              type="password"
+              class="bg-gray-100 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
+              placeholder="Enter password"
+            />
+          </div>
+          <div>
+            <label class="text-gray-800 text-sm mb-2 block">Confirm Password</label>
+            <input
+              name="cpassword" id="cpassword"
+              type="password"
+              class="bg-gray-100 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
+              placeholder="Enter confirm password"
+            />
+          </div>
+        </div>
+
+        <div class="!mt-8">
+          <input
+            type="submit"
+            value="Create an account"
+            class="py-3.5 px-7 text-sm font-semibold tracking-wider rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none block mx-auto"
+          />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

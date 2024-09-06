@@ -1,0 +1,100 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      input[type="checkbox"]:checked + label span:first-of-type {
+        background-color: #10b981;
+        border-color: #10b981;
+        color: #fff;
+      }
+      input[type="checkbox"]:checked + label span:nth-of-type(2) {
+        text-decoration: line-through;
+        color: #9ca3af;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100">
+    <div class="justify-center w-screen h-screen font-medium text-gray-600">
+      <h1 class="text-black text-2xl text-center py-4">
+        Welcome Your Blogs <%= user.name %>
+      </h1>
+      <div
+        class="grid grid-cols-2 gap-4 items-start justify-around content-center"
+      >
+        <div
+          class="font-medium text-gray-600 bg-gray-100 bg-white w-[90%] mx-auto pb-10 rounded-2xl"
+        >
+          <h1 class="text-green-700 text-2xl text-center py-4">
+            Create New Blog Hear!
+          </h1>
+          <div
+            class="flex flex-grow items-center justify-center content-center"
+          >
+            <!-- Create Blog Component Start -->
+            <div class="p-8 rounded-lg shadow-lg">
+              <form action="/api/blog/add" method="post">
+                <div class="p-4 bg-gray-100 rounded-lg">
+                  <input
+                    class="flex-grow py-3 pl-2 mt-2 rounded-lg ml-[5%] my-2 focus:outline-none bg-white w-[90%] font-medium"
+                    type="text"
+                    id="blogTitle"
+                    name="blogTitle"
+                    placeholder="add Blog Title"
+                  />
+
+                  <textarea
+                    class="resize-y w-[90%] py-2 pl-2 my-2 ml-[5%] rounded-md focus:outline-none"
+                    name="blogBody"
+                    id="blogBody"
+                    placeholder="Input Text Hear!"
+                    rows="5"
+                  ></textarea>
+
+                  <div class="flex justify-center">
+                    <button
+                      type="submit"
+                      class="items-center mx-auto border bg-cyan-500 px-4 py-2 mt-6 text-sm font-medium rounded"
+                    >
+                      Add Blog
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <!-- Create Blog Component End  -->
+          </div>
+        </div>
+
+        <!-- Component Start -->
+        <div class="bg-white w-[90%] rounded-2xl shadow-lg">
+          <div class="mx-auto ms-4 my-4">
+            <h4 class="font-semibold ml-10 text-lg">
+              <%= user.name %>'s Blog List
+            </h4>
+          </div>
+          <div class="">
+            <% for(let i = 0; i < blog.length; i++) { %>
+            <div class="shadow-lg w-[80%] mx-auto rounded-lg my-10 p-4">
+              <h2 class="text-2xl mb-4">
+                <span class="me-2"><%= i+1 %>.</span> 
+                <%= blog[i].blogTitle %>
+              </h2>
+              <p>
+                <%= blog[i].blogBody %>
+              </p>
+            </div>
+            <% } %>
+          </div>
+        </div>
+        <!-- Component End  -->
+      </div>
+    </div>
+  </body>
+</html>

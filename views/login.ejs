@@ -1,0 +1,57 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div
+      class="flex flex-col justify-center font-[sans-serif] p-4 my-6"
+    >
+      <div
+        class="max-w-md w-full mx-auto border border-gray-300 rounded-2xl p-8"
+      >
+        <div class="text-center mb-12">
+          <h2 class="bg-gray-200 py-2 rounded text-gray-500 font-semibold underline">Blog Site Login</h2>
+        </div>
+
+        <form action="/api/user/login" method="post">
+          <div class="space-y-6">
+            <div>
+              <label class="text-gray-800 text-sm mb-2 block">Email Id</label>
+              <input
+                name="email" id="email"
+                type="text"
+                class="text-gray-800 bg-white border border-gray-300 w-full text-sm px-4 py-3 rounded-md outline-blue-500"
+                placeholder="Enter email"
+              />
+            </div>
+            <div>
+              <label class="text-gray-800 text-sm mb-2 block">Password</label>
+              <input
+                name="password" id="password"
+                type="password"
+                class="text-gray-800 bg-white border border-gray-300 w-full text-sm px-4 py-3 rounded-md outline-blue-500"
+                placeholder="Enter password"
+              />
+            </div>
+          </div>
+
+          <div class="!mt-8">
+            <input
+              type="submit"
+              value="Log IN"
+              class="w-full text-center block py-3 px-4 text-sm tracking-wider font-semibold rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none"
+            />
+          </div>
+        </form>
+        <p class="text-gray-800 text-base mt-6">You haven't an account?
+          <a
+            href="/"
+            class="text-blue-600 font-semibold hover:underline ml-1"
+          >Register here</a></p>
+      </div>
+    </div>
+  </body>
+</html>
